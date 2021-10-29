@@ -7,38 +7,35 @@ function isAdmin (user){
 }
 
 function getEmail(user){
-    return (user.firstName + '.' +user.lastName + "@codeimmersives.com").toLowerCase()
+    return (user.firstName + '.' +user.lastName + "@gmail.com").toLowerCase()
 }
 
 function getPlaylistLength(playList){
     return playList.songs.length
-
 }
 
-function getHardestHomework(arrObj){
-    if (arrObj.length === 0) {return ""}
+function getHardestHomework(homework){
+    if (homework.length === 0) {return ""}
 
-    let hardestHW = arrObj[0].name
-    let minScore = arrObj[0].averageScore
-
-
-    for (const eachObj of arrObj){
-        if (eachObj.averageScore < minScore){  
-            minScore =  eachObj.averageScore 
-            hardestHW =  eachObj.name   
+    let hardHW = homework[0].name
+    let minScore = homework[0].averageScore
+    for (const grade of homework){
+        if (grade.averageScore < minScore){  
+            minScore =  grade.averageScore 
+            hardHW =  grade.name   
         }
     }
-    return hardestHW
+    return hardHW
 }
 
 function createPhonebook(name, number){
-    const phoneBook = {
+    const contact = {
     }
         for (let i = 0;i < name.length; i++){
-        phoneBook[name[i]] = number[i]
+        contact[name[i]] = number[i]
         }
-    console.log(phoneBook)
-    return phoneBook
+    console.log(contact)
+    return contact
 }
 
 
